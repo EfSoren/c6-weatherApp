@@ -12,7 +12,7 @@ header{
     font-size: 3rem;
     width: 100vw;
     height: 125px;
-
+    border-bottom: 5px solid black;
 }
 
 #container{
@@ -25,7 +25,7 @@ header{
     font-weight: bolder;
     font-size: 1.5rem;
     text-align: center;
-    border: 5px solid black;
+    border-right: 5px solid black;
     padding: 0;
 }
 
@@ -69,12 +69,13 @@ header{
     height: 40%;
 }
 #daily{
-    background-color: red;
+
     height: 25vh;
     margin: 1rem 1rem 0 1rem;
-    border: 2px solid black;
+    list-style: none;
 
 }
+
 #daily ul{
     font-size: 1.5rem;
     margin-left: -1rem;
@@ -95,16 +96,16 @@ header{
 #cards{
     display: flex;
     justify-content: space-around;
-    background-color: green;
+
     height: 25vh;
 }
 .dayCard{
     background-image: linear-gradient(to top, rgb(0, 183, 255), rgb(47, 0, 255));
     color: white;
-    height: 80%;
+    height: 100%;
     width: 15%;
     font-size: 1.25rem;
 }
 .dayCard li{
-    margin-bottom: .75rem;
+    margin-bottom: 2rem;
 }
