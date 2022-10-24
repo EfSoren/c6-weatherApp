@@ -1,0 +1,110 @@
+:root{
+    margin: -.5rem;
+
+}
+
+header{
+    display: flex;
+    background-image: linear-gradient(to left, rgb(0, 183, 255), rgb(47, 0, 255));
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    width: 100vw;
+    height: 125px;
+
+}
+
+#container{
+    display: flex;
+}
+#searchCont{
+    background-color: white;
+    width: 25%;
+    height: 100vh;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 5px solid black;
+    padding: 0;
+}
+
+#citySearch, #btnSearch{
+    width: 95%;
+    height: 2rem;
+    padding: 0;
+    margin-bottom: .5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#citySearch{
+    background-color: beige;
+}
+
+#btnSearch{
+ background-color: lightblue;
+
+}
+
+#searchList{
+    width: 95%;
+    margin: 0;
+    padding: 2%;
+    list-style: none;
+   
+}
+
+.rS{
+    width: 100%;
+    background-color: #a1a5ab;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+
+}
+
+#infoContain{
+    width: 75%;
+    height: 40%;
+}
+#daily{
+    background-color: red;
+    height: 25vh;
+    margin: 1rem 1rem 0 1rem;
+    border: 2px solid black;
+
+}
+#daily ul{
+    font-size: 1.5rem;
+    margin-left: -1rem;
+    list-style: none;
+}
+#daily li{
+    margin-top: 1rem;
+}
+.dailyHeader{
+    font-size: 3rem;
+}
+
+#divider{
+    height: 1rem;
+    margin: 1rem 0;
+    background-color: black;
+}
+#cards{
+    display: flex;
+    justify-content: space-around;
+    background-color: green;
+    height: 25vh;
+}
+.dayCard{
+    background-image: linear-gradient(to top, rgb(0, 183, 255), rgb(47, 0, 255));
+    color: white;
+    height: 80%;
+    width: 15%;
+    font-size: 1.25rem;
+}
+.dayCard li{
+    margin-bottom: .75rem;
+}
