@@ -14,7 +14,12 @@ header{
     height: 125px;
     border-bottom: 5px solid black;
 }
-
+h1{
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
 #container{
     display: flex;
 }
@@ -96,7 +101,7 @@ header{
 #cards{
     display: flex;
     justify-content: space-around;
-
+    margin-top: 2rem;
     height: 25vh;
 }
 .dayCard{
@@ -108,4 +113,8 @@ header{
 }
 .dayCard li{
     margin-bottom: 2rem;
+}
+.d1{
+    text-align: center;
+    font-size: 2rem;
 }

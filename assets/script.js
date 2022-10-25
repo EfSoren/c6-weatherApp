@@ -3,15 +3,9 @@ var currDate = moment().format('MMM Do YY')
 var $citySearch = $('#citySearch')
 var $dailyHeader = $('#dailyHeader')
 var incData = []
-var cardData = ''
-var rename = ''
-var dat = ''
-var city = ''
-var windSpeed = ''
-var temp = ''
-var humidity = ''
-var dataPos = ''
+var city = 'Lehi'
 var dataArray;
+let keyID = 0
 
 // API Calls
 //Weather keywords .wind.speed .main.temp .main.humidity
@@ -31,6 +25,8 @@ fetch(querySearch).then((response)=> {return response.json();}).then((data)=>{
 //Card Formatting
 function formatToday(){
     let $d1 = $('<ul>').addClass('d1')
+    let forecastEl = $('<h1>').text("5 Day Forecast")
+    $('#divider').append(forecastEl)
     for (i = 0; i < 4; i++) {
         var today = $('<li>').attr('id', `header${i}`)
            $('.d1').append(today)
@@ -46,11 +42,13 @@ function formatForecast(){
     
     for (let i = 0; i < 5; i++) {
         currDate = moment().add(i, 'days').format('MMM Do YY')
-        dataArray = [`Date: ${currDate}`, `Temp: `+ incData[i].main.temp +  `°`, `Wind: `+ incData[i].wind.speed +  `MPH`, `Humidity: `+ incData[i].main.humidity +  `%`]
+        dataArray = [`Date: ${currDate}`,
+                     `Temp: `+ incData[i].main.temp +  `°`,
+                     `Wind: `+ incData[i].wind.speed +  `MPH`,
+                     `Humidity: `+ incData[i].main.humidity +  `%`]
         let $dayCard = $('<ul>').addClass('dayCard')
             for (var j = 0; j < 4; j++) {
                 var dAP = dataArray[j]
-                 cardData = rename.dAP
                  var forecast = $('<li>').attr('id', `${i}card${j}`).text(dAP)
             $dayCard.append(forecast)   
         }
@@ -63,15 +61,36 @@ function formatForecast(){
     $('section').children().remove()
 
  }  
- function name(){
-    console.log($citySearch[0].value);
+ function getStorage(){
+    $('#searchList').children().remove()
+    for (let i = 0; i < 10; i++) {
+        let itemGet = localStorage.getItem(`key${i}`)
+        if(itemGet == null){return}
+        console.log(itemGet);
+        let recentSearches = $('<li>').addClass('rS')
+        recentSearches.append(itemGet)
+        $('#searchList').append(recentSearches)
+        
+    }
+ }
+ getStorage()
+ function searchStorage(){
+     let searchText = $citySearch[0].value
+  if(searchText == ''){
+    return
+  }else{
+      let keyName = `key${keyID}`
+      keyID++
+      localStorage.setItem(`${keyName}`, searchText)
+    }
 
  } 
     function formatAll(){
         resetCards()
         formatToday()
         formatForecast()
-        name()
+        searchStorage()
+        getStorage()
     }
 //Local Storage Functions
 
